@@ -4,7 +4,7 @@ const pkg = require("../package.json")
 
 program
     .version(pkg.version)
-    .command("key", "Manage API Key -- ")
+    .command("key", "Web Search API: https://rapidapi.com/contextualwebsearch/api/web-search/"
+                    +"\nMedium API: https://rapidapi.com/nishujain1997.19@gmail.com/api/medium2/"
+                    +"\nStackoverflow API: https://api.stackexchange.com/")
     .parse(process.argv)
-
-console.log("Hello from scout");
