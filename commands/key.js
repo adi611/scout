@@ -1,7 +1,7 @@
 const inquirer = require("inquirer")
 const colors = require("colors")
 const KeyManager = require("../lib/KeyManager")
-const {isRequired} = require("../utils/validation")
+const { isRequired } = require("../utils/validation")
 
 const key = {
     async set() {
@@ -33,11 +33,34 @@ const key = {
             console.log("API Key Set".blue);
         }
     },
+
     show() {
+        const keyManager = new KeyManager()
 
+        try {
+            const key = keyManager.getKey()
+            if (key.apiKey_websearch)
+                console.log("Web Search API: ".cyan, key.apiKey_websearch.yellow);
+            if (key.apiKey_stackoverflow)
+                console.log("Stack Overflow API: ".cyan, key.apiKey_stackoverflow.yellow);
+            if (key.apiKey_medium)
+                console.log("Medium API: ".cyan, key.apiKey_medium.yellow);
+
+        } catch (error) {
+            console.error(error.message.red)
+        }
     },
-    remove() {
 
+    remove(title) {
+        try {
+            const keyManager = new KeyManager();
+            keyManager.deleteKey(title);
+
+            console.log("Key Removed".blue);
+
+        } catch (error) {
+            console.error(error.message.red);
+        }
     }
 }
 
