@@ -1,31 +1,44 @@
 const inquirer = require("inquirer")
 const colors = require("colors")
 const KeyManager = require("../lib/KeyManager")
-const { isRequired } = require("../utils/validation")
+const { isRequired, isNotRequired } = require("../utils/validation")
 
 const key = {
     async set() {
         const keyManager = new KeyManager();
+        let keys = {};
+        keys = keyManager.getKey(true);
+
         const input = await inquirer.prompt([
             {
                 type: "input",
                 name: "webSearch",
                 message: "Enter Web Search API Key ".green + "https://rapidapi.com/contextualwebsearch/api/web-search/",
-                validate: isRequired
+                validate: keys.apiKey_websearch ? isNotRequired : isRequired
             },
             {
                 type: "input",
                 name: "stackOverflow",
                 message: "Enter Stack Overflow API Key ".green + "https://api.stackexchange.com/",
-                validate: isRequired
+                validate: keys.apiKey_stackoverflow ? isNotRequired : isRequired
             },
             {
                 type: "input",
                 name: "medium",
                 message: "Enter Medium API Key ".green + "https://rapidapi.com/nishujain1997.19@gmail.com/api/medium2/",
-                validate: isRequired
+                validate: keys.apiKey_medium ? isNotRequired : isRequired
             }
         ]);
+
+        if (input.webSearch === '') {
+            input.webSearch = keys.apiKey_websearch;
+        }
+        if (input.stackOverflow === '') {
+            input.stackOverflow = keys.apiKey_stackoverflow;
+        }
+        if (input.medium === '') {
+            input.medium = keys.apiKey_medium;
+        }
 
         const key = keyManager.setKey(input)
 
