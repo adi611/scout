@@ -1,15 +1,14 @@
 const program = require('commander');
+const search = require('../commands/search')
 
 program
     .command('web')
     .description('Search the query through the web')
     .option(
-        '--coin <type>',
-        'Add specific coin types in CSV format',
-        'BTC,ETH,XRP'
+        '--text <text>',
+        'Search query'
     )
-    .option('--cur <currency>', 'Change the currency', 'USD')
-    .action(cmd => check.price(cmd));
+    .action(cmd => search.web(cmd));
 
 program.parse(process.argv);
 
