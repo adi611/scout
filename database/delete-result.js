@@ -11,6 +11,9 @@ async function deleteById(id) {
     }
 }
 
-// deleteById(1);
+// for (let i = 3; i <= 15; i++) {
+//     deleteById(i);
+// }
+// deleteById(16);
 
 module.exports = deleteById;

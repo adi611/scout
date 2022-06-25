@@ -42,12 +42,13 @@ async function inquire(resultsArr) {
         ])
         // console.log(input.resNo);
         const db = new Database();
-        db.showAllRows();
+        db.save(resultsArr[input.resNo])
+            .then(res => db.showAllRows());
     }
 }
 
 function print(res) {
-    console.log(res);
+    // console.log(res);
     let count = 1;
     const featured = res.featured_snippet ? featured_snippet : null;
     if (featured) {
