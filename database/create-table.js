@@ -11,7 +11,7 @@ async function create() {
     try {
         const res = await pool.query(text);
         console.log("Table created");
-        console.log(res.rows);
+        // console.log(res.rows);
         return true;
     } catch (error) {
         console.error(error);

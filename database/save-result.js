@@ -9,17 +9,17 @@ async function save(result) {
     INSERT INTO query (title, url, description) 
     VALUES ('${title}', '${url}', '${description}')`;
 
-    console.log(text);
+    // console.log(text);
 
     try {
         const res = await pool.query(text);
         console.log("Values inserted");
-        console.log(res.rows);
+        return true;
     } catch (error) {
         console.error(error);
     }
 }
 
-save({ title: "test", url: "test-url", description: "test-description" });
+// save({ title: "test", url: "test-url-2", description: "test-description" });
 
 module.exports = save;
