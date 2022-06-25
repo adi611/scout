@@ -17,8 +17,8 @@ class Database {
         await deleteById(id);
     }
 
-    async showAllRows() {
-        return await showAllRows();
+    async showAllRows(isInquire) {
+        return await showAllRows(isInquire);
     }
 
 }

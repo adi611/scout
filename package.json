@@ -24,6 +24,8 @@
     "configstore": "^3.1.5",
     "dotenv": "^16.0.1",
     "inquirer": "^8.2.0",
+    "open": "^8.4.0",
+    "open-term": "^2.0.4",
     "pg": "^8.7.3",
     "terminal-link": "^2.1.1"
   }

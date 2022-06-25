@@ -3,16 +3,18 @@ const { pool } = require("./db");
 async function save(result) {
     const title = result.title;
     const url = result.link;
-    const description = result.description;
+    const description = result.description !== '' ? result.description : '';
+
+    // title = title.replace(/['"]+/g, '')
 
     const text = `
     INSERT INTO query (title, url, description) 
-    VALUES ('${title}', '${url}', '${description}')`;
+    VALUES ($1, $2, $3)`;
 
     // console.log(text);
 
     try {
-        const res = await pool.query(text);
+        const res = await pool.query(text, [title, url, description]);
         console.log("Values inserted");
         return true;
     } catch (error) {

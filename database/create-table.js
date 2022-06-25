@@ -4,8 +4,8 @@ async function createTable() {
         CREATE TABLE IF NOT EXISTS "query" (
             "id" SERIAL,
             "title" VARCHAR(100) NOT NULL,
-            "url" VARCHAR(100) NOT NULL,
-            "description" VARCHAR(1000) NOT NULL,
+            "url" VARCHAR(1000) NOT NULL,
+            "description" VARCHAR(10000) NOT NULL,
             PRIMARY KEY ("id")
         );`;
     try {

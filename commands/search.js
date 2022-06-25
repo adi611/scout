@@ -43,14 +43,14 @@ async function inquire(resultsArr) {
         // console.log(input.resNo);
         const db = new Database();
         db.save(resultsArr[input.resNo])
-            .then(res => db.showAllRows());
+            .then(res => db.showAllRows(true));
     }
 }
 
 function print(res) {
     // console.log(res);
     let count = 1;
-    const featured = res.featured_snippet ? featured_snippet : null;
+    const featured = res.featured_snippet ? res.featured_snippet : null;
     if (featured) {
         const titleLink = terminalLink(featured.title, featured.link);
         console.log("\nTop result:\n".blue);
@@ -72,6 +72,7 @@ function print(res) {
         count++;
     });
     const resultsArr = [res.featured_snippet, ...res.results];
+    console.log(resultsArr);
     inquire(resultsArr);
 }
 
