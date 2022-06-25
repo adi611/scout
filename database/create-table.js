@@ -1,5 +1,5 @@
 const { pool } = require('./db')
-async function create() {
+async function createTable() {
     const text = `
         CREATE TABLE IF NOT EXISTS "query" (
             "id" SERIAL,
@@ -18,4 +18,4 @@ async function create() {
     }
 }
 
-module.exports = create;
+module.exports = createTable;
