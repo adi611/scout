@@ -2,7 +2,7 @@ const { pool } = require("./db");
 
 async function save(result) {
     const title = result.title;
-    const url = result.link;
+    const url = result.link ? result.link : result.url;
     const description = result.description !== '' ? result.description : '';
 
     // title = title.replace(/['"]+/g, '')
