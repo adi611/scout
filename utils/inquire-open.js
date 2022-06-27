@@ -2,13 +2,13 @@ const colors = require("colors");
 const inquirer = require("inquirer");
 const open = require('open');
 
-async function inquireOpen(res) {
-    let resNo = -1;
+async function inquireOpen(res, isFromSaved) {
+    const msg = isFromSaved ? "Do you want to open any saved result? " : "Do you want to open any search result? ";
     const input = await inquirer.prompt([
         {
             type: "input",
             name: "toOpen",
-            message: "Do you want to open any saved result? ".green + "y/n",
+            message: msg.green + "y/n",
         }
     ])
 
@@ -20,18 +20,18 @@ async function inquireOpen(res) {
                 message: "Result number? ".green,
             }
         ])
-        resNo = input.resNo - 1;
+        let resNo = input.resNo - 1;
 
-        if (resNo !== -1) {
-            try {
-                const cmd = res[resNo].url ? res[resNo].url : res[resNo].link;
-                await open(`${cmd}`);
-                await inquireOpen(res);
 
-            } catch (error) {
-                console.error("There was some error opening the url");
-            }
+        try {
+            const cmd = res[resNo].url ? res[resNo].url : res[resNo].link;
+            await open(`${cmd}`);
+            await inquireOpen(res);
+
+        } catch (error) {
+            console.error("There was some error opening the url");
         }
+
     }
 
 

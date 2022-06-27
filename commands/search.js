@@ -1,10 +1,9 @@
 const WebAPI = require('../lib/WebAPI')
 const KeyManager = require("../lib/KeyManager")
 const Database = require('../database/DB2')
-const terminalLink = require('terminal-link');
-const colors = require("colors");
 const inquirer = require("inquirer");
 const inquireOpen = require('../utils/inquire-open')
+const printRes = require('../utils/print')
 
 const search = {
     web(cmd) {
@@ -56,32 +55,7 @@ async function inquire(resultsArr) {
 }
 
 function print(res) {
-    // console.log(res);
-    let count = 1;
-    const featured = res.featured_snippet ? res.featured_snippet : null;
-    if (featured) {
-        const titleLink = terminalLink(featured.title, featured.link);
-        console.log("\nTop result:\n".blue);
-        console.log("[" + count + "] " + "Title: ".yellow + titleLink.white);
-        // console.log("Link: " + featured.link);
-        console.log("    Description: ".yellow + featured.description.white);
-        count++;
-    }
-    console.log();
-
-    featured ? console.log("More results:\n".blue) : console.log("Top results:\n".blue);
-    const results = res.results;
-    // let table = [];
-    results.forEach(element => {
-        const titleLink = terminalLink(element.title, element.link);
-        console.log("[" + count + "] " + "Title: ".yellow + titleLink.white);
-        console.log("    Description: ".yellow + element.description.grey);
-        console.log("------------------------------------------------------------");
-        count++;
-    });
-    const resultsArr = [res.featured_snippet, ...res.results];
-    console.log(resultsArr);
-    inquire(resultsArr);
+    printRes(res, false, inquire);
 }
 
 const arr = [
@@ -128,6 +102,7 @@ const arr = [
     }
 ]
 
-inquire(arr);
+// inquire(arr);
+// print(arr, true);
 
 module.exports = search;
