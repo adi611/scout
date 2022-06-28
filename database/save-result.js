@@ -1,4 +1,4 @@
-const { pool } = require("./db");
+const { pool } = require("./postgres-connect");
 
 async function save(result) {
     const title = result.title;

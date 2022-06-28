@@ -1,4 +1,4 @@
-const { pool } = require('./db');
+const { pool } = require('./postgres-connect');
 const inquireOpen = require('../utils/inquire-open')
 const print = require('../utils/print')
 

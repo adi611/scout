@@ -1,4 +1,4 @@
-const { pool } = require('./db')
+const { pool } = require('./postgres-connect')
 async function createTable() {
     const text = `
         CREATE TABLE IF NOT EXISTS "query" (

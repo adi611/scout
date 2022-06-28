@@ -1,4 +1,4 @@
-const { pool } = require('./db');
+const { pool } = require('./postgres-connect');
 
 async function deleteById(id) {
     const text = `DELETE FROM query WHERE id = ${id}`;

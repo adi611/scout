@@ -1,4 +1,4 @@
-const { pool } = require("./db");
+const { pool } = require("./postgres-connect");
 const createTable = require('./create-table');
 const save = require('./save-result');
 const deleteById = require('./delete-result');
