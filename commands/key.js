@@ -13,7 +13,7 @@ const key = {
             {
                 type: "input",
                 name: "webSearch",
-                message: "Enter Web Search API Key ".green + "https://rapidapi.com/contextualwebsearch/api/web-search/",
+                message: "Enter Web Search API Key ".green + "https://rapidapi.com/apigeek/api/google-search3/",
                 validate: keys.apiKey_websearch ? isNotRequired : isRequired
             },
             {
