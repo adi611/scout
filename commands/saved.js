@@ -1,4 +1,4 @@
-const Database = require('../database/DB2');
+const Database = require('../database/Database');
 
 const saved = {
     async show() {

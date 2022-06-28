@@ -1,6 +1,6 @@
 const WebAPI = require('../lib/WebAPI')
 const KeyManager = require("../lib/KeyManager")
-const Database = require('../database/DB2')
+const Database = require('../database/Database')
 const inquirer = require("inquirer");
 const inquireOpen = require('../utils/inquire-open')
 const printRes = require('../utils/print')
