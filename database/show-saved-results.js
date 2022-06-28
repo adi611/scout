@@ -16,6 +16,6 @@ async function showAllRows(isInquire) {
     }
 }
 
-showAllRows(true);
+// showAllRows(true);
 
 module.exports = showAllRows;

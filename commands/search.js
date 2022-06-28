@@ -42,7 +42,7 @@ async function inquireSave(resultsArr) {
         ])
         // console.log(input.resNo);
         const db = new Database();
-        await db.save(resultsArr[input.resNo])
+        await db.save(resultsArr[input.resNo - 1])
         await db.showAllRows();
         await inquireSave(resultsArr);
     }

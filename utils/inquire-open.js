@@ -26,7 +26,7 @@ async function inquireOpen(res, isFromSaved) {
         try {
             const cmd = res[resNo].url ? res[resNo].url : res[resNo].link;
             await open(`${cmd}`);
-            await inquireOpen(res);
+            isFromSaved ? await inquireOpen(res, true) : await inquireOpen(res);
 
         } catch (error) {
             console.error("There was some error opening the url");

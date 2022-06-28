@@ -22,6 +22,7 @@ function print(res, isFromSaved, inquire) {
         const titleLink = terminalLink(element.title, isFromSaved ? element.url : element.link);
         console.log("[" + count + "] " + "Title: ".yellow + titleLink.brightCyan);
         console.log("    Description: ".yellow + element.description.brightWhite);
+        isFromSaved ? console.log("    ID: ".yellow + element.id) : '';
         console.log("------------------------------------------------------------");
         count++;
     });
