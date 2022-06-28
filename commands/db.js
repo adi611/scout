@@ -1,46 +1,46 @@
-const inquirer = require("inquirer")
-const colors = require("colors")
-const DbManager = require('../lib/DbManager')
-const { isRequired } = require('../utils/validation')
+const inquirer = require("inquirer");
+const colors = require("colors");
+const DbManager = require("../lib/DbManager");
+const { isRequired } = require("../utils/validation");
 
 const db = {
-    async set() {
-        const input = await inquirer.prompt([
-            {
-                type: "input",
-                name: "host",
-                message: "Enter Host/Endpoint ".green,
-                validate: isRequired
-            },
-            {
-                type: "input",
-                name: "port",
-                message: "Enter Port ".green,
-                validate: isRequired
-            },
-            {
-                type: "input",
-                name: "dbname",
-                message: "Enter Database Name ".green,
-                validate: isRequired
-            },
-            {
-                type: "input",
-                name: "username",
-                message: "Enter Username ".green,
-                validate: isRequired
-            },
-            {
-                type: "input",
-                name: "password",
-                message: "Enter Password ".green,
-                validate: isRequired
-            },
-        ])
+  async set() {
+    const input = await inquirer.prompt([
+      {
+        type: "input",
+        name: "host",
+        message: "Enter Host/Endpoint ".green,
+        validate: isRequired,
+      },
+      {
+        type: "input",
+        name: "port",
+        message: "Enter Port ".green,
+        validate: isRequired,
+      },
+      {
+        type: "input",
+        name: "dbname",
+        message: "Enter Database Name ".green,
+        validate: isRequired,
+      },
+      {
+        type: "input",
+        name: "username",
+        message: "Enter Username ".green,
+        validate: isRequired,
+      },
+      {
+        type: "input",
+        name: "password",
+        message: "Enter Password ".green,
+        validate: isRequired,
+      },
+    ]);
 
-        const dbmanager = new DbManager();
-        dbmanager.setDb(input);
-    }
-}
+    const dbmanager = new DbManager();
+    dbmanager.setDb(input);
+  },
+};
 
 module.exports = db;
