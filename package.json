@@ -1,5 +1,5 @@
 {
-  "name": "scout",
+  "name": "@adi611/scout",
   "version": "1.0.0",
   "description": "CLI to scout for doubts during coding sessions",
   "main": "index.js",
