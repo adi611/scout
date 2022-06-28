@@ -1,12 +1,15 @@
 const { Pool } = require("pg");
-require('dotenv').config();
+const DbManager = require('../lib/DbManager')
+
+const dbmanager = new DbManager();
+const dbconfig = dbmanager.getDb();
 
 const pool = new Pool({
-    host: process.env.RDS_HOSTNAME,
-    user: process.env.RDS_USERNAME,
-    port: process.env.RDS_PORT,
-    password: process.env.RDS_PASSWORD,
-    database: process.env.RDS_DB_NAME
-});
+    host: dbconfig.host,
+    user: dbconfig.username,
+    port: dbconfig.port,
+    password: dbconfig.password,
+    database: dbconfig.dbname
+})
 
 module.exports = { pool };

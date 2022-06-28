@@ -23,14 +23,4 @@ class Database {
 
 }
 
-// const db = new Database();
-// const isCreated = db.createTable();
-
-// if (isCreated) {
-//     const res = async () => await db.save({ title: "a", url: "b-12", description: "c" })
-//     const res2 = async () => await db.showAllRows()
-
-//     res().then(res => res2())
-// }
-
 module.exports = Database;
