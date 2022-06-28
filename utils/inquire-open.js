@@ -25,11 +25,11 @@ async function inquireOpen(res, isFromSaved) {
     let resNo = input.resNo - 1;
 
     try {
-      const cmd = res[resNo].url ? res[resNo].url : res[resNo].link;
+      const cmd = res[resNo].link;
       await open(`${cmd}`);
       isFromSaved ? await inquireOpen(res, true) : await inquireOpen(res);
     } catch (error) {
-      console.error("There was some error opening the url");
+      console.error("There was some error opening the link");
     }
   }
 }

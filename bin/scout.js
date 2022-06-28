@@ -6,8 +6,7 @@ program
   .version(pkg.version)
   .command(
     "key",
-    "Web Search API: https://rapidapi.com/apigeek/api/google-search3/" +
-      "\nStackoverflow API: https://api.stackexchange.com/"
+    "Web Search API: https://rapidapi.com/apigeek/api/google-search3/"
   )
   .command("db", "Manage PostgreSQL database")
   .command("search", "Search For Doubts")

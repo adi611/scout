@@ -18,14 +18,6 @@ const key = {
           "https://rapidapi.com/apigeek/api/google-search3/",
         validate: isRequired,
       },
-      {
-        type: "input",
-        name: "stackOverflow",
-        message:
-          "Enter Stack Overflow API Key ".green +
-          "https://api.stackexchange.com/",
-        validate: isRequired,
-      },
     ]);
 
     const key = keyManager.setKey(input);
@@ -40,24 +32,20 @@ const key = {
 
     try {
       const key = keyManager.getKey();
-      if (key.apiKey_websearch)
-        console.log("Web Search API: ".cyan, key.apiKey_websearch.yellow);
-      if (key.apiKey_stackoverflow)
-        console.log(
-          "Stack Overflow API: ".cyan,
-          key.apiKey_stackoverflow.yellow
-        );
+
+      console.log("Web Search API: ".cyan, key.apiKey_websearch.yellow);
     } catch (error) {
       console.error(error.message.red);
     }
   },
 
-  remove(title) {
+  remove() {
     try {
       const keyManager = new KeyManager();
-      keyManager.deleteKey(title);
+      keyManager.deleteKey();
 
       console.log("Key Removed".blue);
+      return;
     } catch (error) {
       console.error(error.message.red);
     }

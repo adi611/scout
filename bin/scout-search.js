@@ -7,6 +7,12 @@ program
   .option("--text <text>", "Search query")
   .action((cmd) => search.web(cmd));
 
+program
+  .command("sof")
+  .description("Search the query through stackoverflow")
+  .option("--text <text>", "Search query")
+  .action((cmd) => search.sof(cmd));
+
 program.parse(process.argv);
 
 // If no args, output help

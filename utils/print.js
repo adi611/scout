@@ -21,12 +21,9 @@ function print(res, isFromSaved, inquire) {
   const results = isFromSaved ? res : res.results;
 
   results.forEach((element) => {
-    const titleLink = terminalLink(
-      element.title,
-      isFromSaved ? element.url : element.link
-    );
+    const titleLink = terminalLink(element.title, element.link);
     console.log("[" + count + "] " + "Title: ".yellow + titleLink.brightCyan);
-    console.log("    Description: ".yellow + element.description.brightWhite);
+    element.description ? console.log("    Description: ".yellow + element.description.brightWhite) : '';
     isFromSaved ? console.log("    ID: ".yellow + element.id) : "";
     console.log("------------------------------------------------------------");
     count++;

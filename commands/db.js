@@ -41,6 +41,17 @@ const db = {
     const dbmanager = new DbManager();
     dbmanager.setDb(input);
   },
+
+  show() {
+    const dbmanager = new DbManager();
+    const dbconfig = dbmanager.getDb();
+
+    console.log(`\nHost/Endpoint: ${dbconfig.host}` +
+                `\nPort: ${dbconfig.port}` +
+                `\nDatabase Name: ${dbconfig.dbname}` +
+                `\nUsername: ${dbconfig.username}` +
+                `\nPassword: ${dbconfig.password}`);
+  },
 };
 
 module.exports = db;

@@ -3,7 +3,7 @@ const inquireOpen = require("../utils/inquire-open");
 const print = require("../utils/print");
 
 async function showAllRows(isInquire) {
-  const text = `SELECT * from query`;
+  const text = `SELECT * from searches`;
   try {
     const res = await pool.query(text);
     print(res.rows, true);
