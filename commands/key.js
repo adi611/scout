@@ -6,8 +6,6 @@ const { isRequired } = require("../utils/validation");
 const key = {
   async set() {
     const keyManager = new KeyManager();
-    let keys = {};
-    keys = keyManager.getKey(true);
 
     const input = await inquirer.prompt([
       {
