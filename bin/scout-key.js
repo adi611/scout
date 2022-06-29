@@ -4,8 +4,8 @@ const key = require("../commands/key");
 program
   .command("set")
   .description(
-    "Set API key(s)" +
-      "\nWeb Search API: https://rapidapi.com/contextualwebsearch/api/web-search/"
+    "Set API key" +
+      "\nWeb Search API: https://rapidapi.com/apigeek/api/google-search3/"
   )
   .action(key.set);
 
