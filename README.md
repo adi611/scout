@@ -4,12 +4,12 @@ Command line interface written in Node.js to solve doubts during coding sessions
 
 ## Working
 
-You can search through Google as well as Stackoverflow from the terminal itself and open the required search result from the terminal in an a new browser window. You will also have the option to save/bookmark any result for future reference.
+You can search through Google as well as Stackoverflow from the terminal itself and open the required search result from the terminal in an a new browser window. You will also have the option to save/bookmark any result for future reference.  
 The user has options to load the saved results and modify/delete them as well as open the required links from the saved results from the terminal itself
 
 ## Pre-requisites
 
-Register a Google Search API Key at: https://rapidapi.com/apigeek/api/google-search3/
+Register a Google Search API Key at: https://rapidapi.com/apigeek/api/google-search3/  
 (No API Key required for Stackoverflow)
 
 ## Recommended
@@ -42,7 +42,7 @@ npm link
 
 ## Setup
 
-Run `scout key set` and it will ask you for your Google Search API Key. Enter it.
+Run `scout key set` and it will ask you for your Google Search API Key. Enter it.  
 For PostgreSQL setup (required for save/bookmark feature), run `scout db set`. It will then ask you for your `host/endpoint`, `port`, `database name`, `username` and `password`. Enter these details.
 
 ## Commands
@@ -73,6 +73,6 @@ scout saved delete --id <id>    # Delete the saved/bookmarked result(s)
 
 ```
 
-# Deployment
+## Deployment
 
 This CLI is automatically published through CD to [npm](https://www.npmjs.com/package/@adi611/scout) using Github Actions on every push. Work is undergoing to add Jest Unit Tests and add CI on every pull request.
