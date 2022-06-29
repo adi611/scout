@@ -12,7 +12,7 @@ async function showAllRows(isInquire) {
     }
     return true;
   } catch (error) {
-    console.error(error);
+    console.error("Error while showing the saved/bookmarked results");
   }
 }
 

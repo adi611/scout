@@ -6,7 +6,7 @@ async function deleteById(id) {
     const res = await pool.query(text);
     console.log(`Result with id = ${id} deleted`);
   } catch (error) {
-    console.error(error);
+    console.error("Error deleting saved/bookmarked result");
   }
 }
 
