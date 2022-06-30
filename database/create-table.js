@@ -1,6 +1,7 @@
 const { pool } = require("./postgres-connect");
 async function createTable() {
-  const text = `
+  try {
+    const text = `
         CREATE TABLE IF NOT EXISTS "searches" (
             "id" SERIAL,
             "title" VARCHAR(100) NOT NULL,
@@ -8,11 +9,12 @@ async function createTable() {
             "description" VARCHAR(10000),
             PRIMARY KEY ("id")
         );`;
-  try {
+
     const res = await pool.query(text);
     return true;
   } catch (error) {
     console.error(error);
+    return false;
   }
 }
 
