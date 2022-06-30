@@ -4,17 +4,17 @@ Command line interface written in Node.js to solve doubts during coding sessions
 
 ## Working
 
-You can search through Google as well as Stackoverflow from the terminal itself and open the required search result from the terminal in an a new browser window. You will also have the option to save/bookmark any result for future reference.  
-The user has options to load the saved results and modify/delete them as well as open the required links from the saved results from the terminal itself
+You can search through Google as well as Stackoverflow from the terminal itself and open the required search result from the terminal in a new browser window. You will also have the option to save/bookmark any result for future reference.  
+The user has options to load the saved results and modify/delete them as well as open the required links from the saved results from the terminal itself.
 
 ## Pre-requisites
 
-Register a Google Search API Key at: https://rapidapi.com/apigeek/api/google-search3/  
+Register a Google Search API Key [here](https://rapidapi.com/apigeek/api/google-search3/)  
 (No API Key required for Stackoverflow)
 
 ## Recommended
 
-It is highly recommended that you use PostgreSQL database to unlock all the capabilities of scout. The database may be on localhost or provided by IaaS providers like AWS (AWS RDS). Cloud-based host for database (like AWS RDS) will ensure that your saved/bookmarked results will be in sync across all your devices.
+It is highly recommended that you use PostgreSQL database to unlock all the capabilities of scout. The database may be on localhost or provided by Cloud providers like AWS (AWS RDS). Cloud-based host for database (like AWS RDS) will ensure that your saved/bookmarked results will be in sync across all your devices.
 
 ## Usage
 
@@ -73,6 +73,14 @@ scout saved delete --id <id>    # Delete the saved/bookmarked result(s)
 
 ```
 
+## Testing
+
+Unit tests for the CLI is written with Jest, and can be found under the 'tests` directory. To run the tests:
+
+```
+npm test
+```
+
 ## Deployment
 
-This CLI is automatically published through CD to [npm](https://www.npmjs.com/package/@adi611/scout) using Github Actions on every push. Work is undergoing to add Jest Unit Tests and add CI on every pull request.
+This CLI is automatically published through CD to [npm](https://www.npmjs.com/package/@adi611/scout) using Github Actions on every push, and also supports CI of pull requests after running unit tests with Jest.
