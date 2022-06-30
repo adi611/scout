@@ -1,6 +1,6 @@
 {
   "name": "@adi611/scout",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "CLI to scout for doubts during coding sessions",
   "main": "index.js",
   "bin": "./bin/scout.js",
