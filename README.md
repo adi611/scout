@@ -75,7 +75,7 @@ scout saved delete --id <id>    # Delete the saved/bookmarked result(s)
 
 ## Testing
 
-Unit tests for the CLI is written with Jest, and can be found under the 'tests` directory. To run the tests:
+Unit tests for the CLI is written with Jest, and can be found under the `tests` directory. To run the tests:
 
 ```
 npm test
